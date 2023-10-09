@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="732df4fa-08fd-476a-a1ed-98f9e6b3ef36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Attatchment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/clbennettselph_customersupport/AttatchmentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/clbennettselph_customersupport/TicketTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Clbennett-Selph_CustomerSupport/FileContentIndex/2a6e9e23-362e-44c5-a625-d4ae7a0b074a.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Attatchment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Attatchment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -37,20 +36,110 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.clbennettselph_customersupport" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AttatchmentTest.getName">
+    <configuration name="AttatchmentTest.getName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Clbennett-Selph_CustomerSupport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.clbennettselph_customersupport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.clbennettselph_customersupport" />
+      <option name="MAIN_CLASS_NAME" value="com.example.clbennettselph_customersupport.AttatchmentTest" />
+      <option name="METHOD_NAME" value="getName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TicketTest.testAddAttachment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Clbennett-Selph_CustomerSupport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.clbennettselph_customersupport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.clbennettselph_customersupport" />
+      <option name="MAIN_CLASS_NAME" value="com.example.clbennettselph_customersupport.TicketTest" />
+      <option name="METHOD_NAME" value="testAddAttachment" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TicketTest.testGetAllAttatchments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Clbennett-Selph_CustomerSupport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.clbennettselph_customersupport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.clbennettselph_customersupport" />
+      <option name="MAIN_CLASS_NAME" value="com.example.clbennettselph_customersupport.TicketTest" />
+      <option name="METHOD_NAME" value="testGetAllAttatchments" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TicketTest.testGetSpecificAttatchment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Clbennett-Selph_CustomerSupport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.clbennettselph_customersupport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.clbennettselph_customersupport" />
+      <option name="MAIN_CLASS_NAME" value="com.example.clbennettselph_customersupport.TicketTest" />
+      <option name="METHOD_NAME" value="testGetSpecificAttatchment" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TicketTest.testSubject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Clbennett-Selph_CustomerSupport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.clbennettselph_customersupport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.clbennettselph_customersupport" />
+      <option name="MAIN_CLASS_NAME" value="com.example.clbennettselph_customersupport.TicketTest" />
+      <option name="METHOD_NAME" value="testSubject" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="Clbennett-Selph_CustomerSupport:war exploded">
@@ -72,6 +161,15 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AttatchmentTest.getName" />
+        <item itemvalue="JUnit.TicketTest.testGetSpecificAttatchment" />
+        <item itemvalue="JUnit.TicketTest.testGetAllAttatchments" />
+        <item itemvalue="JUnit.TicketTest.testAddAttachment" />
+        <item itemvalue="JUnit.TicketTest.testSubject" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -83,7 +181,7 @@
       <updated>1696281440356</updated>
       <workItem from="1696281441370" duration="617000" />
       <workItem from="1696788067757" duration="8069000" />
-      <workItem from="1696814716107" duration="1547000" />
+      <workItem from="1696814716107" duration="9161000" />
     </task>
     <servers />
   </component>

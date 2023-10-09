@@ -21,11 +21,4 @@ public class Attatchment {
     public void setContents(byte[] contents) {
         this.contents = contents;
     }
-
-    //What does this code do?
-    //public String toString() {
-    //   String var10000 = this.name;
-    //   return "Image{name='" + var10000 + "', contents=" + Arrays.toString(this.contents) + "}";
-    //}
-
 }

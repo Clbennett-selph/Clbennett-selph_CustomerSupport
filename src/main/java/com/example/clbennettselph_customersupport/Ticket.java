@@ -32,7 +32,7 @@ public class Ticket {
       public String getCustomerName(){
           return this.customerName;
       }
-      public void setCusomerName(String customerName){
+      public void setCustomerName(String customerName){
           this.customerName = customerName;
       }
       public String getSubject(){
@@ -54,23 +54,19 @@ public class Ticket {
           this.customerDB = customerDB;
       }
 
+
       //      Also create the following helper methods    Done?
       //      addAttachment - adds an attachment into the hash map     Done?
       //      getNumberOfAttachments - returns the size of the attachment hash map   Done?
       //      get an individual attachment via an index value sent   Done?
       //      get all attachments   Done?
-
       public void addAttachment(){
-          //Not sure how this would be implemented yet
-          // capitalCities.put("England", "London");
         customerDB.put(this.customerName, this.subject);
       }
-      public void getNumberOfAttatchments() {
-        customerDB.size();
+      public int getNumberOfAttatchments() {
+        return customerDB.size();
       }
-      public void getSpecificAttachment(){
-        customerDB.get(this.customerName);
-      }
+      public String getSpecificAttachment(){return customerDB.get(this.customerName);}
       public void getAllAttatchments(){
           for (String i : customerDB.values()) {
               System.out.println(i);
