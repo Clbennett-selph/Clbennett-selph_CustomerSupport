@@ -3,33 +3,35 @@ package com.example.clbennettselph_customersupport;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-//The fields include:
-  //      customer name(String) Done
-  //      subject(String)      Done
-  //      body of the ticket(String) Done
-  //      attachments (Hash map) Done?
-
-  //      This POJO should have a constructor that takes on all fields and a default that   DONE
-  //      doesn't take on any. (So two constructors)  DONE
-  //      You should have the getters and setters     DONE
-
 public class Ticket {
+    //      customer name(String)
     private String customerName;
+
+    //      subject(String)
     private String subject;
+
+    //      body of the ticket(String)
     private String ticketBody;
-    private Map<String, String> customerDB = new LinkedHashMap<String, String>();
+
+    //      attachments (Hash map) Done?
+    private Map<String, String> attatchments = new LinkedHashMap<String, String>();
     //Not sure if this part with the LinkedMap or any part involving it is coded properly, I think it is???
 
+
+    //      This POJO should have a constructor that takes on all fields and a default that
+    //      doesn't take on any. (So two constructors)
     public Ticket() {
         super();
     }
-    public Ticket(String customerName, String subject, String ticketBody, Map customerDB) {
+    public Ticket(String customerName, String subject, String ticketBody, Map attatchments) {
         this.customerName = customerName;
         this.subject = subject;
         this.ticketBody = ticketBody;
-        this.customerDB = customerDB;
+        this.attatchments = attatchments;
     }
-      public String getCustomerName(){
+
+    //      You should have the getters and setters
+    public String getCustomerName(){
           return this.customerName;
       }
       public void setCustomerName(String customerName){
@@ -47,28 +49,30 @@ public class Ticket {
       public void setTicketBody(String ticketBody){
           this.ticketBody = ticketBody;
       }
-      public Map getCustomerDB(){
-          return this.customerDB;
+      public Map getAttatchments(){
+          return this.attatchments;
       }
-      public void setCustomerDB(Map customerDB){
-          this.customerDB = customerDB;
+      public void setAttatchments(Map attatchments){
+          this.attatchments = attatchments;
       }
 
 
-      //      Also create the following helper methods    Done?
-      //      addAttachment - adds an attachment into the hash map     Done?
-      //      getNumberOfAttachments - returns the size of the attachment hash map   Done?
-      //      get an individual attachment via an index value sent   Done?
-      //      get all attachments   Done?
-      public void addAttachment(){
-        customerDB.put(this.customerName, this.subject);
+    //      addAttachment - adds an attachment into the hash map
+    public void addAttachment(){
+          attatchments.put(this.customerName, this.subject);
       }
-      public int getNumberOfAttatchments() {
-        return customerDB.size();
+
+    //      getNumberOfAttachments - returns the size of the attachment hash map
+    public int getNumberOfAttatchments() {
+        return attatchments.size();
       }
-      public String getSpecificAttachment(){return customerDB.get(this.customerName);}
-      public void getAllAttatchments(){
-          for (String i : customerDB.values()) {
+
+    //      get an individual attachment via an index value sent
+    public String getSpecificAttachment(){return attatchments.get(this.customerName);}
+
+    //      get all attachments
+    public void getAllAttatchments(){
+          for (String i : attatchments.values()) {
               System.out.println(i);
           }
       }

@@ -17,11 +17,11 @@ class TicketTest {
         assertEquals("Issue", tick.getSubject());
     }
     @Test
-    void testGetCustomerDB() {
+    void testGetAttatchment() {
         tick.setCustomerName("Bob");
         tick.setSubject("Work");
         tick.addAttachment();
-        assertNotNull(tick.getCustomerDB());
+        assertNotNull(tick.getAttatchments());
     }
     @Test
     void testAddAttachment(){
