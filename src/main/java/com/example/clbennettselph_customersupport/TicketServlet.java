@@ -10,8 +10,10 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet (name = "ticket", value = "/ticket")
+@MultipartConfig(fileSizeThreshold = 5_242_880, maxFileSize = 20_971_520L, maxRequestSize = 41_943_040L)
+
 public class TicketServlet extends HttpServlet{
-    private volatile int TicketId = 1;
+    private volatile int TICKET_ID = 1;
     private Map<Integer, Ticket> ticketDB = new LinkedHashMap<>();
 
     @Override
@@ -19,6 +21,7 @@ public class TicketServlet extends HttpServlet{
         response.setContentType("text/html");
 
         String action = request.getParameter("action");
+
         if (action == null) {
             action = "listTickets";
         }
@@ -28,11 +31,9 @@ public class TicketServlet extends HttpServlet{
             //viewTicket - view one ticket based on the id sent
             case "viewTicket" -> viewTicket(request, response);
             //downloadAttachment - downloads the attachment (The book provides good coding example)
-            case "downloadTicketForm" -> downloadTicket(request, response);
+            case "downloadAttachment" -> downloadAttachment(request, response);
             //showTicketForm - HTML based form that has user enter in information and calls this action
             case "showTicketForm" -> showTicketForm(request, response);
-            //processAttachment - processes the attachment using Part and InputStream
-            case "processAttachment" -> processAttachment(request, response);
             //getTicket - gets a ticket based off the id and returns it (helper method for view and download methods)
             case "getTicket"-> getTicket(String.valueOf(request), response);
             default -> listTickets(request, response);
@@ -88,7 +89,28 @@ public class TicketServlet extends HttpServlet{
         print.println("</body></html>");
     }
 
-    private void downloadTicket(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void downloadAttachment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String idString = request.getParameter("ticketId");
+
+        Ticket tick = getTicket(idString, response);
+
+        String name = request.getParameter("image");
+        if (name == null) {
+            response.sendRedirect("ticket?action=viewTicket&ticketId=" + idString);
+        }
+
+        Attachment attachment = (Attachment) tick.getAttachments();
+        if (attachment == null) {
+            response.sendRedirect("ticket?action=viewTicket&ticketId=" + idString);
+            return;
+        }
+
+        response.setHeader("Content-Disposition", "image; filename=" + attachment.getName());
+        response.setContentType("application/octet-stream");
+
+        ServletOutputStream out = response.getOutputStream();
+        out.write(attachment.getContents());
+
     }
 
     private void showTicketForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -103,11 +125,29 @@ public class TicketServlet extends HttpServlet{
         print.println("<input type=\"text\" name=\"subject\"><br><br>");
         print.println("Description: <br>");
         print.println("<textarea name=\"ticketBody\" rows=\"10\" cols=\"100\"></textarea><br><br>");
+        print.println("<b>Attachment: </b><br>");
+        print.println("<input type=\"file\" name=\"file1\"><br><br>");
         print.println("<input type=\"submit\" value=\"Submit\">");
         print.println("</form></body></html>");
     }
 
-    private void processAttachment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    //processAttachment - processes the attachment using Part and InputStream
+    private Attachment processAttachment(Part file) throws ServletException, IOException {
+        InputStream in = file.getInputStream();
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+        // processing the binary data to bytes
+        int read;
+        final byte[] bytes = new byte[1024];
+        while ((read = in.read(bytes)) != -1) {
+            out.write(bytes, 0, read);
+        }
+
+        Attachment attachment = new Attachment();
+        attachment.setName(file.getSubmittedFileName());
+        attachment.setContents(out.toByteArray());
+
+        return attachment;
     }
 
     private Ticket getTicket(String idString, HttpServletResponse response) throws ServletException, IOException {
@@ -115,6 +155,7 @@ public class TicketServlet extends HttpServlet{
             response.sendRedirect("ticket");
             return null;
         }
+
         try {
             int id = Integer.parseInt(idString);
             Ticket tick = ticketDB.get(id);
@@ -136,9 +177,17 @@ public class TicketServlet extends HttpServlet{
         tick.setSubject(request.getParameter("subject"));
         tick.setTicketBody(request.getParameter("ticketBody"));
 
+        Part file = request.getPart("file1");
+        if (file != null) {
+            Attachment attachment = this.processAttachment(file);
+            if (attachment != null) {
+                tick.setAttachments((Map) attachment);
+            }
+        }
+
         int id;
         synchronized(this) {
-            id = this.TicketId++;
+            id = this.TICKET_ID++;
             ticketDB.put(id, tick);
         }
         response.sendRedirect("ticket?action=viewTicket&ticketId=" + id);

@@ -4,76 +4,67 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Ticket {
-    //      customer name(String)
-    private String customerName;
-
-    //      subject(String)
-    private String subject;
-
-    //      body of the ticket(String)
-    private String ticketBody;
+    private String customerName; //      customer name(String)
+    private String subject; //      subject(String)
+    private String ticketBody; //      body of the ticket(String)
+    private Map<String, String> attachments = new LinkedHashMap<String, String>();
 
     //      attachments (Hash map) Done?
-    //private  Attatchment attachments;???
-    private Map<String, String> attatchments = new LinkedHashMap<String, String>();
-    //Not sure if this part with the LinkedMap or any part involving it is coded properly, I think it is???
+    //      Not sure if this part with the LinkedMap or any part involving it is coded properly, I think it is???
 
-
-    //      This POJO should have a constructor that takes on all fields and a default that
-    //      doesn't take on any. (So two constructors)
     public Ticket() {
         super();
-    }
-    public Ticket(String customerName, String subject, String ticketBody, Map attatchments) {
+    } //  (two constructors)
+    public Ticket(String customerName, String subject, String ticketBody, Map attachments) {
         this.customerName = customerName;
         this.subject = subject;
         this.ticketBody = ticketBody;
-        this.attatchments = attatchments;
+        this.attachments = attachments;
     }
 
     //      You should have the getters and setters
     public String getCustomerName(){
-          return this.customerName;
+          return customerName;
       }
       public void setCustomerName(String customerName){
           this.customerName = customerName;
       }
       public String getSubject(){
-          return this.subject;
+          return subject;
       }
       public void setSubject(String subject){
           this.subject = subject;
       }
       public String getTicketBody(){
-          return this.ticketBody;
+          return ticketBody;
       }
       public void setTicketBody(String ticketBody){
           this.ticketBody = ticketBody;
       }
-      public Map getAttatchments(){
-          return this.attatchments;
+      public Map getAttachments(){
+          return attachments;
       }
-      public void setAttatchments(Map attatchments){
-          this.attatchments = attatchments;
+      public void setAttachments(Map attachments){
+          this.attachments = attachments;
       }
 
 
     //      addAttachment - adds an attachment into the hash map
     public void addAttachment(){
-          attatchments.put(this.customerName, this.subject);
+          attachments.put(this.customerName, this.subject);
       }
 
     //      getNumberOfAttachments - returns the size of the attachment hash map
-    public int getNumberOfAttatchments() {
-        return attatchments.size();
+    public int getNumberOfAttachments() {
+        return attachments.size();
       }
 
     //      get an individual attachment via an index value sent
-    public String getSpecificAttachment(){return attatchments.get(this.customerName);}
+    public String getSpecificAttachment(){return attachments.get(this.customerName);}
 
     //      get all attachments
-    public void getAllAttatchments(){
-          for (String i : attatchments.values()) {
+    public void getAllAttachments(){
+          for (String i : attachments.values()) {
               System.out.println(i);
           }
       }
@@ -84,7 +75,7 @@ public class Ticket {
                 "customerName='" + customerName + '\'' +
                 ", subject='" + subject + '\'' +
                 ", ticketBody='" + ticketBody + '\'' +
-                ", attatchments=" + attatchments +
+                ", attachments=" + attachments +
                 '}';
     }
 }
