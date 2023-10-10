@@ -90,7 +90,7 @@ public class TicketServlet extends HttpServlet{
     }
 
     private void downloadAttachment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idString = request.getParameter("ticketId");
+        /*String idString = request.getParameter("ticketId");
 
         Ticket tick = getTicket(idString, response);
 
@@ -109,7 +109,7 @@ public class TicketServlet extends HttpServlet{
         response.setContentType("application/octet-stream");
 
         ServletOutputStream out = response.getOutputStream();
-        out.write(attachment.getContents());
+        out.write(attachment.getContents());*/
 
     }
 
@@ -125,14 +125,16 @@ public class TicketServlet extends HttpServlet{
         print.println("<input type=\"text\" name=\"subject\"><br><br>");
         print.println("Description: <br>");
         print.println("<textarea name=\"ticketBody\" rows=\"10\" cols=\"100\"></textarea><br><br>");
-        print.println("<b>Attachment: </b><br>");
-        print.println("<input type=\"file\" name=\"file1\"><br><br>");
+
+        /*print.println("<b>Attachment: </b><br>");
+        print.println("<input type=\"file\" name=\"file1\"><br><br>");*/
+
         print.println("<input type=\"submit\" value=\"Submit\">");
         print.println("</form></body></html>");
     }
 
     //processAttachment - processes the attachment using Part and InputStream
-    private Attachment processAttachment(Part file) throws ServletException, IOException {
+    /*private Attachment processAttachment(Part file) throws IOException {
         InputStream in = file.getInputStream();
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
@@ -148,7 +150,7 @@ public class TicketServlet extends HttpServlet{
         attachment.setContents(out.toByteArray());
 
         return attachment;
-    }
+    }*/
 
     private Ticket getTicket(String idString, HttpServletResponse response) throws ServletException, IOException {
         if (idString == null || idString.length() == 0) {
@@ -177,18 +179,17 @@ public class TicketServlet extends HttpServlet{
         tick.setSubject(request.getParameter("subject"));
         tick.setTicketBody(request.getParameter("ticketBody"));
 
-        Part file = request.getPart("file1");
+        /*Part file = request.getPart("file1");
         if (file != null) {
             Attachment attachment = this.processAttachment(file);
-            if (attachment != null) {
-                tick.setAttachments((Map) attachment);
-            }
-        }
+            if (attachment != null)
+                tick.addAttachment(attachment);
+        }*/
 
         int id;
         synchronized(this) {
             id = this.TICKET_ID++;
-            ticketDB.put(id, tick);
+            this.ticketDB.put(id, tick);
         }
         response.sendRedirect("ticket?action=viewTicket&ticketId=" + id);
     }
