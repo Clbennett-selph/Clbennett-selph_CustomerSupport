@@ -7,7 +7,7 @@ public class Ticket {
     private String customerName; //      customer name(String)
     private String subject; //      subject(String)
     private String ticketBody; //      body of the ticket(String)
-    private Map<String, String> attachments = new LinkedHashMap<String, String>();
+    private Map<String, String> attachments = new LinkedHashMap<>();
 
     //      attachments (Hash map) Done?
     //      Not sure if this part with the LinkedMap or any part involving it is coded properly, I think it is???

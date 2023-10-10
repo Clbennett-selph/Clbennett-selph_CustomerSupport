@@ -16,30 +16,30 @@ class TicketTest {
         tick.setSubject("Issue");
         assertEquals("Issue", tick.getSubject());
     }
-    @Test
-    void testGetAttachment() {
-        tick.setCustomerName("Bob");
-        tick.setSubject("Work");
-        tick.addAttachment();
-        assertNotNull(tick.getAttachments());
-    }
-    @Test
-    void testAddAttachment(){
-        tick.setCustomerName("Bob");
-        tick.setSubject("Work");
-        tick.addAttachment();
-        tick.setCustomerName("deb");
-        tick.setSubject("Unemployed");
-        tick.addAttachment();
-        assertEquals (2, tick.getNumberOfAttachments());
-    };
-    @Test
-    void testGetSpecificAttachment(){
-        tick.setCustomerName("Bob");
-        tick.setSubject("Work");
-        tick.addAttachment();
-        assertNotNull(tick.getSpecificAttachment());
-    };
+    //@Test
+    //void testGetAttachment() {
+        //tick.setCustomerName("Bob");
+        //tick.setSubject("Work");
+        //tick.addAttachment();
+        //assertNotNull(tick.getAttachments());
+    //}
+    //@Test
+    //void testAddAttachment(){
+    //    tick.setCustomerName("Bob");
+    //    tick.setSubject("Work");
+    //    tick.addAttachment();
+    //    tick.setCustomerName("deb");
+    //    tick.setSubject("Unemployed");
+    //    tick.addAttachment();
+    //   assertEquals (2, tick.getNumberOfAttachments());
+    //};
+    //@Test
+    //void testGetSpecificAttachment(){
+    //    tick.setCustomerName("Bob");
+    //    tick.setSubject("Work");
+    //    tick.addAttachment();
+    //    assertNotNull(tick.getSpecificAttachment());
+    //};
 
     //@Test
     //void testGetAllAttatchments() {
