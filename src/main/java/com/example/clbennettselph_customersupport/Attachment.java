@@ -6,9 +6,8 @@ public class Attachment {
     //Two private instance variables - String name and a byte array contents
     private String name;
     private byte[] contents;
-    public Attachment() {
-        super();
-    }
+
+
     public String getName() {
         return name;
     }
