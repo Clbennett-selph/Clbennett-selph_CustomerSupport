@@ -14,6 +14,7 @@ public class Ticket {
     private String ticketBody;
 
     //      attachments (Hash map) Done?
+    //private  Attatchment attachments;???
     private Map<String, String> attatchments = new LinkedHashMap<String, String>();
     //Not sure if this part with the LinkedMap or any part involving it is coded properly, I think it is???
 
@@ -76,12 +77,14 @@ public class Ticket {
               System.out.println(i);
           }
       }
-      @Override
-      public String toString() {
-          return "Ticket{" +
-                  "customerName='" + customerName + '\'' +
-                  ", subject='" + subject + '\'' +
-                  ", ticketBody='" + ticketBody + '\'' +
-                  '}';
-      }
-  }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "customerName='" + customerName + '\'' +
+                ", subject='" + subject + '\'' +
+                ", ticketBody='" + ticketBody + '\'' +
+                ", attatchments=" + attatchments +
+                '}';
+    }
+}

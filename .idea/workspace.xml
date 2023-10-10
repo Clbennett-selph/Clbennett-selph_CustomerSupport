@@ -10,11 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="732df4fa-08fd-476a-a1ed-98f9e6b3ef36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Attatchment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Attachment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/clbennettselph_customersupport/TicketTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/clbennettselph_customersupport/TicketTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/clbennettselph_customersupport/AttatchmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/clbennettselph_customersupport/AttatchmentTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +38,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -169,6 +172,21 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -212,7 +230,7 @@
       <workItem from="1696281441370" duration="617000" />
       <workItem from="1696788067757" duration="8069000" />
       <workItem from="1696814716107" duration="9775000" />
-      <workItem from="1696897697172" duration="8366000" />
+      <workItem from="1696897697172" duration="14457000" />
     </task>
     <servers />
   </component>
@@ -235,8 +253,35 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="3" />
+          <line>113</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
+          <line>93</line>
+          <properties class="com.example.clbennettselph_customersupport.TicketServlet" method="showTicketForm">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
+          <line>76</line>
+          <properties class="com.example.clbennettselph_customersupport.TicketServlet" method="viewTicket">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
+          <line>90</line>
+          <properties class="com.example.clbennettselph_customersupport.TicketServlet" method="downloadTicket">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
