@@ -82,14 +82,14 @@ public class TicketServlet extends HttpServlet{
 
         PrintWriter print = response.getWriter();
         print.println("<html><body><h2>Ticket Post</h2>");
-        print.println("<h3>Subject" + tick.getSubject()+ "</h3>");
+        print.println("<h3>Subject: " + tick.getSubject()+ "</h3>");
         print.println("<p>Customer: " + tick.getCustomerName() + "</p>");
         print.println("<p>" + tick.getTicketBody() + "</p>");
         print.println("<a href=\"ticket\">Return to Ticket list</a>");
         print.println("</body></html>");
     }
 
-    private void downloadAttachment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+     void downloadAttachment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*String idString = request.getParameter("ticketId");
 
         Ticket tick = getTicket(idString, response);
@@ -138,7 +138,6 @@ public class TicketServlet extends HttpServlet{
         InputStream in = file.getInputStream();
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        // processing the binary data to bytes
         int read;
         final byte[] bytes = new byte[1024];
         while ((read = in.read(bytes)) != -1) {
@@ -182,8 +181,9 @@ public class TicketServlet extends HttpServlet{
         /*Part file = request.getPart("file1");
         if (file != null) {
             Attachment attachment = this.processAttachment(file);
-            if (attachment != null)
-                tick.addAttachment(attachment);
+            if (attachment != null) {
+                tick.setAttachments((Map) attachment);
+            }
         }*/
 
         int id;

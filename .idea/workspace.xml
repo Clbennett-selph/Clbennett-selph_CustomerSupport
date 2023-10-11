@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="732df4fa-08fd-476a-a1ed-98f9e6b3ef36" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Attachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Attachment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java" afterDir="false" />
     </list>
@@ -36,6 +37,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -229,7 +233,8 @@
       <workItem from="1696788067757" duration="8069000" />
       <workItem from="1696814716107" duration="9775000" />
       <workItem from="1696897697172" duration="14918000" />
-      <workItem from="1696962439175" duration="8978000" />
+      <workItem from="1696962439175" duration="11554000" />
+      <workItem from="1696989291442" duration="972000" />
     </task>
     <servers />
   </component>
@@ -251,42 +256,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
-          <line>115</line>
-          <properties class="com.example.clbennettselph_customersupport.TicketServlet" method="showTicketForm">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
-          <line>77</line>
-          <properties class="com.example.clbennettselph_customersupport.TicketServlet" method="viewTicket">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
-          <line>91</line>
-          <properties class="com.example.clbennettselph_customersupport.TicketServlet" method="downloadAttachment">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/Ticket.java</url>
-          <line>46</line>
-          <properties class="com.example.clbennettselph_customersupport.Ticket" method="setAttachments">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/../../Example/BlogWebApp (Ver1)/src/main/java/com/example/blogwebapp/BlogServlet.java</url>
           <line>76</line>
           <properties class="com.example.blogwebapp.BlogServlet" method="createPost">
@@ -295,10 +264,24 @@
           </properties>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
+          <line>115</line>
+          <properties class="com.example.clbennettselph_customersupport.TicketServlet" method="showTicketForm">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="44" />
+          <line>154</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/clbennettselph_customersupport/TicketServlet.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
