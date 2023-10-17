@@ -49,11 +49,10 @@ public class Ticket {
           this.attachments = attachments;
       }
 
-
     //      addAttachment - adds an attachment into the hash map
-    /*public void addAttachment(){
-        Attachment attachment = new Attachment();
-          attachments.put();
+    public void addAttachment(){
+        //Attachment attachment = new Attachment();
+        //  attachments.put();
     }
 
     //      getNumberOfAttachments - returns the size of the attachment hash map
@@ -62,15 +61,17 @@ public class Ticket {
     }
 
     //      get an individual attachment via an index value sent
-    public String getSpecificAttachment(){return
-            attachments.get(attachments.getName);}
+    public String getSpecificAttachment(){
+        //Dont believe its getting the right value
+        return attachments.get(customerName);
+    }
 
     //      get all attachments
     public void getAllAttachments(){
          for (String i : attachments.values()) {
               System.out.println(i);
           }
-      }*/
+      }
 
     @Override
     public String toString() {
