@@ -1,2 +1,2 @@
-<%@ page import="com.example.clbennettselph_customersupport.Ticket, com.example.clbennettselph_customersupport.Attachment" %>
 <%@ page session="false" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>

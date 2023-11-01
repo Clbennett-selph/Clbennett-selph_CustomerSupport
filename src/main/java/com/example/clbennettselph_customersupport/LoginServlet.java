@@ -14,13 +14,12 @@ import java.util.Map;
 @WebServlet(name="loginServlet", value="/login")
 public class LoginServlet extends HttpServlet {
     public static final Map<String, String> userDB = new Hashtable<>();
-        static {
-            userDB.put("Camron", "Darkflames273");
-            userDB.put("Damian", "Twin101");
-            userDB.put("Emilia", "Aperson");
-            userDB.put("a","a");
-        }
-
+    static {
+        userDB.put("Camron", "Darkflames273");
+        userDB.put("Damian", "Twin101");
+        userDB.put("Emilia", "Aperson");
+        userDB.put("a","a");
+    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -31,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 
         request.setAttribute("loginFailed", false);
         request.getRequestDispatcher("/WEB-INF/jsp/view/login.jsp").forward(request, response);
-        }
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
