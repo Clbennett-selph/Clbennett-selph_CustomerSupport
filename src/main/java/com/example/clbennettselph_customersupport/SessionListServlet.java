@@ -12,10 +12,11 @@ import java.io.IOException;
 public class SessionListServlet  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getSession().getAttribute("username") == null) {
+        /*if(request.getSession().getAttribute("username") == null) {
             response.sendRedirect("login");
             return;
-        }
+        }*/
+
         request.setAttribute("numSessions", SessionListUtil.getNumberOfSessions());
         request.setAttribute("sessionList", SessionListUtil.getAllSessions());
         request.getRequestDispatcher("/WEB-INF/jsp/view/sessions.jsp").forward(request, response);
