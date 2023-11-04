@@ -1,6 +1,5 @@
 package com.example.clbennettselph_customersupport;
 
-import java.text.AttributedCharacterIterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -8,7 +7,7 @@ public class Ticket {
     private String customerName; //      customer name(String)
     private String subject; //      subject(String)
     private String ticketBody; //      body of the ticket(String)
-    private Map<String, String> attachments = new LinkedHashMap<>();
+    private Map<String, Attachment> attachments = new LinkedHashMap<>();
     //private Attachment attachments???
     //      attachments (Hash map) Done?
     //      Not sure if this part with the LinkedMap or any part involving it is coded properly, I think it is???
@@ -61,17 +60,17 @@ public class Ticket {
     }
 
     //      get an individual attachment via an index value sent
-    public String getSpecificAttachment(){
+    /*public String getSpecificAttachment(){
         //Dont believe its getting the right value
         return attachments.get(customerName);
-    }
+    }*/
 
     //      get all attachments
-    public void getAllAttachments(){
+    /*public void getAllAttachments(){
          for (String i : attachments.values()) {
               System.out.println(i);
           }
-      }
+      }*/
 
     @Override
     public String toString() {

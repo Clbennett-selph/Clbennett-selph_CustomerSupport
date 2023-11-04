@@ -2,13 +2,11 @@ package com.example.clbennettselph_customersupport.site;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -32,7 +30,7 @@ public class TicketController {
     }
 
     @PostMapping("create")
-    public View createpost (@ModelAttribute("ticket")TicketForm form) throws IOException {
+    public View createPost (@ModelAttribute("ticket")TicketForm form) throws IOException {
         Ticket tick = new Ticket();
         tick.setCustomerName(form.getCustomerName());
         tick.setSubject(form.getSubject());
@@ -46,6 +44,41 @@ public class TicketController {
                 (attachment.getContents() != null && attachment.getContents().length > 0)) {
                 tick.setAttachments(attachment);
         }
+
+        int id;
+        synchronized (this) {
+            id= this.TICKET_ID++;
+            ticketDB.put(id, tick);
+        }
+
+        return new RedirectView("view/"+id, true, false);
+    }
+
+    @GetMapping("view/{ticketId}")
+    public ModelAndView viewPost(Model model, @PathVariable("ticketId")int ticketId) {
+        Ticket tick = ticketDB.get(ticketId);
+        if (tick == null) {
+            return new ModelAndView(new RedirectView("ticket/list", true, false));
+        }
+
+        model.addAttribute("ticketId", ticketId);
+        model.addAttribute("ticket", tick);
+
+        return new ModelAndView("viewTicket");
+    }
+
+    @GetMapping("/{ticketId}/attachment/{attachment:.+")
+    public View downloadAttachment (@PathVariable("ticketId")int ticketId, @PathVariable("attachment")String name) {
+        Ticket tick = ticketDB.get(ticketId);
+        if(tick == null) {
+            return new RedirectView("listTickets", true, false);
+        }
+
+        Attachment attachment = tick.getAttachments();
+        if (attachment == null) {
+            return new RedirectView("listTickets", true, false);
+        }
+        return new DownloadView(attachment.getName(), attachment.getContents());
     }
 
     public static class TicketForm {

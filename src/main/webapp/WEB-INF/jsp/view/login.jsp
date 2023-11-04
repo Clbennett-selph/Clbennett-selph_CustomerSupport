@@ -5,14 +5,12 @@
 <body>
 <h2>Login</h2>
 You must log in to access current tickets.<br><br>
-    <form method="POST" action="<c:url value='/login'/>"
-    <c:if test="${loginFailed == true}">
-        <b><c:out value="The username or password you have entered are incorrect, Please try again."></c:out></b>
-    </c:if><br>
-
-    Username: <input type="text" name="username"><br><br>
-    Password: <input type="password" name="password"><br><br>
+<form:form method="POST" action="login" modelAttribute="loginForm">
+    <form:label path="username">Username:&nbsp;</form:label>
+    <form:input path="username"/><br><br>
+    <form:label path="password">Password:&nbsp;</form:label>
+    <form:password path="password"/><br><br>
     <input type="submit" value="Log In">
-</form>
+</form:form>
 </body>
 </html>

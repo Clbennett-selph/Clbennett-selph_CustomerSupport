@@ -1,8 +1,9 @@
 package com.example.clbennettselph_customersupport.site;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Attachment {
+public class Attachment implements Serializable {
 
     //Two private instance variables - String name and a byte array contents
     private String name;
