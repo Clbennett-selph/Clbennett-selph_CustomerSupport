@@ -1,4 +1,4 @@
-package com.example.clbennettselph_customersupport;
+package com.example.clbennettselph_customersupport.site;
 
 import jakarta.servlet.http.HttpSession;
 

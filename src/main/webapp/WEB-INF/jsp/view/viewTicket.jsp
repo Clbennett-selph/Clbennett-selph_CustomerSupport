@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    <a href="<c:url value='/logout'/>">Logout</a>
+<a href="<c:url value='/logout'/>">Logout</a>
     <h2>Ticket Post #<c:out value="${ticketId}"/>: <c:out value="${blog.title}"/> </h2>
     <h3>Customer: <c:out value="${ticket.customerName}"/></h3>
     <h3>Subject: <c:out value="${ticket.subject}"/></h3>

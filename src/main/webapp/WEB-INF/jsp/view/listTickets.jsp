@@ -10,11 +10,8 @@
     <title>Current Tickets</title>
 </head>
 <body>
-    <a href="<c:url value='/login'>
-        <c:param name='logout'/>
-    </c:url>">Logout</a>
-
-    <h2>Ticket posts</h2>
+<a href="<c:url value='/logout'/>">Logout</a>
+<h2>Ticket posts</h2>
     <a href="ticket?action=showTicketForm">Create Ticket</a><br><br>
     <%
         if(db.size() == 0) {%>

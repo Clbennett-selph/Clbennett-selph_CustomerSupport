@@ -1,13 +1,14 @@
-package com.example.clbennettselph_customersupport;
+package com.example.clbennettselph_customersupport.site;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-//@WebFilter(value={"/blog", "/sessions"})
+@WebFilter(value={"/", "/blog/*", "/sessions"})
 public class AuthenticationFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -18,7 +19,7 @@ public class AuthenticationFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpSession session = ((HttpServletRequest)servletRequest).getSession(false);
         if(session == null || session.getAttribute("username") == null) {
-            ((HttpServletResponse)servletResponse).sendRedirect("login");
+            ((HttpServletResponse)servletResponse).sendRedirect(((HttpServletRequest)servletRequest).getContextPath() + "/login");
         }
         else {
             filterChain.doFilter(servletRequest, servletResponse);
@@ -27,6 +28,5 @@ public class AuthenticationFilter implements Filter {
 
     @Override
     public void destroy() {
-        Filter.super.destroy();
     }
 }
