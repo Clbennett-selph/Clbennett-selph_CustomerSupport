@@ -16,7 +16,9 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.example.clbennettselph_customersupport.site", useDefaultFilters = false, includeFilters = @ComponentScan.Filter(Controller.class))
+@ComponentScan(basePackages = "com.example.clbennettselph_customersupport.site",
+        useDefaultFilters = false,
+        includeFilters = @ComponentScan.Filter(Controller.class))
 public class ServletContextConfig implements WebMvcConfigurer {
     @Bean
     public ViewResolver viewResolver() {

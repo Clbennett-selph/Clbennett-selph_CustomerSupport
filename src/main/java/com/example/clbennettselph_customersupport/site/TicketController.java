@@ -24,8 +24,9 @@ public class TicketController {
         model.addAttribute("ticketDatabase", ticketDB);
         return "listTickets";
     }
+
     @GetMapping("create")
-    public ModelAndView createTicker() {
+    public ModelAndView createTicket() {
         return new ModelAndView("ticketForm", "ticket", new TicketForm());
     }
 

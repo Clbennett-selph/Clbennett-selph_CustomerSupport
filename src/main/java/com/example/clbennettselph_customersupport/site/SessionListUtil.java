@@ -20,17 +20,17 @@ public class SessionListUtil {
             addSession(session);
         }
     }
+    public static void removeSession(HttpSession session) {
+        SESSIONS.remove(session.getId());
+    }
 
     public static List<HttpSession> getAllSessions() {
         return new ArrayList<>(SESSIONS.values());
     }
-
     public static int getNumberOfSessions() {
         return SESSIONS.size();
     }
-
-    public static void removeSession(HttpSession session) {
-        SESSIONS.remove(session.getId());
-    }
 }
+
+
 

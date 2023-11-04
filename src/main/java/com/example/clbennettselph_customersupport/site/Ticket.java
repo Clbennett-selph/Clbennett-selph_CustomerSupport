@@ -12,9 +12,6 @@ public class Ticket implements Serializable {
     public Ticket() {
         super();
     } //  (two constructors)
-
-
-
     public Ticket(String customerName, String subject, String ticketBody, Map attachments) {
         this.customerName = customerName;
         this.subject = subject;

@@ -1,28 +1,23 @@
-<%@ page import="java.util.Map" %>
-<%@ page import="com.example.clbennettselph_customersupport.Ticket" %>
-<%
-        @SuppressWarnings("unchecked")
-        Map<Integer, Ticket> db = (Map<Integer, Ticket>) request.getAttribute("ticketDB");
-%>
-
 <html>
 <head>
     <title>Current Tickets</title>
 </head>
 <body>
-<a href="<c:url value='/logout'/>">Logout</a>
-<h2>Ticket posts</h2>
-    <a href="ticket?action=showTicketForm">Create Ticket</a><br><br>
-    <%
-        if(db.size() == 0) {%>
-            <%="There are no tickets yet..."%>
-        <%}
-        else {
-            for (int id : db.keySet()) {
-                Ticket tick = db.get(id);%>
-                <%="Ticket # " + id + " "%>
-                <a href = "ticket?action=viewTicket&ticketId=<%=id%>"><%=tick.getSubject()%></a><br>
-            <%}
-        }%>
+    <a href="<c:url value='/logout'/>">Logout</a>
+    <h2>Ticket posts</h2>
+    <a href="<c:url value='/ticket/create'/>">Create Ticekt</a><br>
+    <c:choose>
+        <c:when test="${ticketDatabase.size() == 0}">
+            <p>There are no blog posts yet... </p>
+        </c:when>
+        <C:otherwise>
+            <c:forEach var="ticket" items="${ticketDatabase}">
+                Ticket #: <c:out value="${ticket.key}"/>
+                <a href="<c:url value='/ticket/view/${blog.key}'/>">
+                    <c:out value="${ticket.value.customerName}"/></a><br>
+            </c:forEach>
+
+        </C:otherwise>
+    </c:choose>
 </body>
 </html>

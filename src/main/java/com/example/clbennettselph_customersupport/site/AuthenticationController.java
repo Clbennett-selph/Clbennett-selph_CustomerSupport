@@ -39,6 +39,7 @@ public class AuthenticationController {
         if (session.getAttribute("username") != null) {
             return new ModelAndView(new RedirectView("/ticket/list", true, false));
         }
+
         model.addAttribute("loginFailed", false);
         return new ModelAndView("login", "loginForm", new LoginForm());
     }
@@ -48,6 +49,7 @@ public class AuthenticationController {
                                    Model model,
                                    HttpSession session,
                                    HttpServletRequest request) {
+
         if (session.getAttribute("username") != null) {
             return new ModelAndView(new RedirectView("/ticket/list", true, false));
         }
@@ -55,7 +57,7 @@ public class AuthenticationController {
         String username = form.getUsername();
         String password = form.getPassword();
 
-        if (username == null || password == null || userDB.containsKey(username) || !password.equals(userDB.get(username))) {
+        if (username == null || password == null || !userDB.containsKey(username) || !password.equals(userDB.get(username))) {
             model.addAttribute("loginFailed", true);
             model.addAttribute("loginForm", form);
 
