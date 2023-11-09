@@ -68,6 +68,7 @@ public class TicketController {
         return new ModelAndView("viewTicket");
     }
 
+    //@GetMapping("/{blogId}/image/{image:.+}")
     @GetMapping("/{ticketId}/attachment/{attachment:.+}")
     public View downloadAttachment (@PathVariable("ticketId")int ticketId, @PathVariable("attachment")String name) {
         Ticket tick = ticketDB.get(ticketId);

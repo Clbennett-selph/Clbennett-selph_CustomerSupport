@@ -1,5 +1,6 @@
 package com.example.clbennettselph_customersupport.config;
 
+
 import jakarta.servlet.MultipartConfigElement;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -24,6 +25,5 @@ public class Bootstrap implements WebApplicationInitializer{
         dispatcher.setLoadOnStartup(1);
         dispatcher.setMultipartConfig(new MultipartConfigElement(null, 20_971_520L, 41_943_040L, 5_242_880));
         dispatcher.addMapping("/");
-
     }
 }
