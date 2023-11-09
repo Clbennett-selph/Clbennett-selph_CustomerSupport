@@ -55,9 +55,8 @@ public class Ticket implements Serializable {
       }
 
     //      addAttachment - adds an attachment into the hash map
-    public void addAttachment(){
-        //Attachment attachment = new Attachment();
-        //  attachments.put();
+    public void addAttachment(Attachment attachment, String id){
+        attachments.put(id, attachment);
     }
 
     //      getNumberOfAttachments - returns the size of the attachment hash map

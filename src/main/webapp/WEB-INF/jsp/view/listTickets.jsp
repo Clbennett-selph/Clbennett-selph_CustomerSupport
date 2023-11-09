@@ -8,16 +8,16 @@
     <a href="<c:url value='/ticket/create'/>">Create Ticekt</a><br>
     <c:choose>
         <c:when test="${ticketDatabase.size() == 0}">
-            <p>There are no blog posts yet... </p>
+            <p>There are no ticket posts yet... </p>
         </c:when>
-        <C:otherwise>
+        <c:otherwise>
             <c:forEach var="ticket" items="${ticketDatabase}">
                 Ticket #: <c:out value="${ticket.key}"/>
-                <a href="<c:url value='/ticket/view/${blog.key}'/>">
+                <a href="<c:url value='/ticket/view/${ticket.key}'/>">
                     <c:out value="${ticket.value.customerName}"/></a><br>
             </c:forEach>
 
-        </C:otherwise>
+        </c:otherwise>
     </c:choose>
 </body>
 </html>
