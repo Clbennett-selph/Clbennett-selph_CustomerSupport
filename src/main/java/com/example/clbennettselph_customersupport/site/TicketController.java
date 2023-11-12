@@ -41,7 +41,7 @@ public class TicketController {
         Attachment attachment = new Attachment();
         attachment.setName(file.getOriginalFilename());
         attachment.setContents(file.getBytes());
-        if((attachment.getName() != null && attachment.getName().length() > 0) ||
+        if((attachment.getName() != null && !attachment.getName().isEmpty()) ||
                 (attachment.getContents() != null && attachment.getContents().length > 0)) {
                 tick.setAttachments(attachment);
         }

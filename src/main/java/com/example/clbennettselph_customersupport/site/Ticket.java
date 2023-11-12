@@ -48,7 +48,7 @@ public class Ticket implements Serializable {
       public void setAttachments(Attachment attachments) {this.attachments = attachments;}
 
     public boolean hasAttachment() {
-        return attachments != null && attachments.getName().length() > 0 && attachments.getContents().length > 0;
+        return attachments != null && attachments.getName() != null && attachments.getContents() != null;
     }
 
     @Override
